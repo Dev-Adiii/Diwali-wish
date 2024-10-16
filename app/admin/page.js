@@ -15,8 +15,10 @@ export default function AdminPage() {
           throw new Error('Failed to fetch users');
         }
         const data = await response.json();
+        console.log('Fetched users:', data); // Add this line for debugging
         setUsers(data);
       } catch (err) {
+        console.error('Error fetching users:', err); // Add this line for debugging
         setError(err.message);
       } finally {
         setIsLoading(false);
